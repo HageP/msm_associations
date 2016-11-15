@@ -27,7 +27,15 @@
 
 
       <dt>Director</dt>
-      <dd><%= @movie.director_id %></dd>
+      <dd><%= @movie.director.name %></dd>
+
+      <dt>Character Count</dt>
+      <dd><%= @movie.characters.count %></dd>
+
+      <dt>List of Characters</dt>
+      <% @movie.characters.each do |character| %>
+      <dd><%= character.name %></dd>
+      <% end %>
 
 
     </dl>

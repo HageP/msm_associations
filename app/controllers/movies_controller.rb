@@ -7,7 +7,9 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-
+    # sql = "SELECT directors.name from movies inner join directors on directors.id = movies.director_id where title LIKE '" + @movie.title + "''"
+    # @director = ActiveRecord::Base.connection.execute(sql)
+    # @director.name = params[:name]
     render("movies/show.html.erb")
   end
 
